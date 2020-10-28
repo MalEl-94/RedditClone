@@ -1,6 +1,5 @@
 package com.malelprojects.RedditClone.model;
 
-import jdk.internal.jline.internal.Nullable;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;

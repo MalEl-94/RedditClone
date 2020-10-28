@@ -6,8 +6,7 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
-import javax.validation.constraints.NotEmpty;
-import java.time.Instant;
+import javax.validation.constraints.NotNull;
 
 import static javax.persistence.FetchType.LAZY;
 import static javax.persistence.GenerationType.SEQUENCE;
@@ -15,18 +14,17 @@ import static javax.persistence.GenerationType.SEQUENCE;
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-@Builder
 @Entity
-public class Comment {
+@Builder
+public class Vote {
     @Id
     @GeneratedValue(strategy = SEQUENCE)
-    private Long id;
-    @NotEmpty
-    private String text;
+    private Long voteId;
+    private VoteType voteType;
+    @NotNull
     @ManyToOne(fetch = LAZY)
     @JoinColumn(name = "postId", referencedColumnName = "postId")
     private Post post;
-    private Instant createdDate;
     @ManyToOne(fetch = LAZY)
     @JoinColumn(name = "userId", referencedColumnName = "userId")
     private User user;
