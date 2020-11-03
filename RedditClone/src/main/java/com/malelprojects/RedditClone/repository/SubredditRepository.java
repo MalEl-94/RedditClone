@@ -7,6 +7,6 @@ import org.springframework.stereotype.Repository;
 import java.util.Optional;
 
 @Repository
-public interface SubredditRepository extends JpaRepository<SubredditRepository, Long> {
+public interface SubredditRepository extends JpaRepository<Subreddit,Long> {
     Optional<Subreddit> findByName(String subredditName);
 }
