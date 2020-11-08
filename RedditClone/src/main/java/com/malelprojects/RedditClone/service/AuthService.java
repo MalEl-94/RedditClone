@@ -45,4 +45,5 @@ public class AuthService {
         verificationTokenRepository.save(verificationToken);
         return token;
     }
+
 }
