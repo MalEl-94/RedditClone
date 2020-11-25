@@ -3,7 +3,6 @@ package com.malelprojects.RedditClone.service;
 import com.malelprojects.RedditClone.model.User;
 import com.malelprojects.RedditClone.repository.UserRepository;
 import lombok.AllArgsConstructor;
-import org.graalvm.compiler.lir.LIRInstruction;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;

@@ -1,7 +1,9 @@
 package com.malelprojects.RedditClone.controller;
 
 
+import com.malelprojects.RedditClone.dto.AuthenticationResponse;
 import com.malelprojects.RedditClone.dto.RegisterRequest;
+import com.malelprojects.RedditClone.dto.LoginRequest;
 import com.malelprojects.RedditClone.service.AuthService;
 import lombok.AllArgsConstructor;
 import org.springframework.http.HttpStatus;
@@ -21,10 +23,16 @@ public class AuthController {
         return new ResponseEntity<>("User Registration Successful", HttpStatus.OK);
     }
 
-    @GetMapping("/accountVerification/{token}")
+    @GetMapping("accountVerification/{token}")
     public ResponseEntity<String> verifyAccount(@PathVariable String token){
         authService.verifyAccount(token);
         return new ResponseEntity<>("Account Activated Successfully.",HttpStatus.OK);
+    }
+
+    @PostMapping("/login")
+    public AuthenticationResponse login (@RequestBody LoginRequest loginRequest){
+        //pass loginrequest dto to login method
+        return authService.login(loginRequest);
     }
 
 }
